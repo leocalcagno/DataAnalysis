@@ -24,6 +24,10 @@ Browse through the topics and explore the latest additions. Each section include
 
 *Regularly updated with cutting-edge methodologies and industry standards*
 
+- [Python Data Analysis](./Examples/polars.ipynb)
+- [Polars English](./Polars_en.md)
+- [Polars Spanish](./Polars_es.md)
+
 ## 🤝 Contributing
 
 Contributions, issues, and feature requests are welcome!
