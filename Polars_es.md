@@ -147,7 +147,7 @@ Esto revela estadísticas descriptivas, tipos de datos y valores nulos en segund
 
 
 
-### Conclusión y Teaser para la Parte 2
+### Conclusión 
 
 Polars no es solo una herramienta; es un cambio de paradigma que te permite enfocarte en insights en lugar de esperar que tu código termine. En mi carrera, ha transformado workflows lentos en procesos ágiles, ahorrando horas valiosas.
 

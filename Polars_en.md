@@ -145,7 +145,7 @@ shape: (9, 13)
 
 This reveals descriptive statistics, data types, and null values in seconds. Compared to Pandas, Polars is noticeably more efficient even on small loads.
 
-### Conclusion and Teaser for Part 2
+### Conclusion 
 
 Polars is not just a tool; it's a paradigm shift that allows you to focus on insights instead of waiting for your code to finish. In my career, it has transformed slow workflows into agile processes, saving valuable hours.
 
