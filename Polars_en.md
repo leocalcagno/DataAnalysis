@@ -75,17 +75,28 @@ print(df_titanic.head(3))
 
 Typical output:
 ```
+Load Time: 0.3230s
 shape: (3, 12)
-┌─────────────┬────────┬────────┬────────────────────────┬───┬───────┬───────┬───────┬───────┐
-│ PassengerId ┆ Survived ┆ Pclass ┆ Name                   ┆ … ┆ Ticket ┆ Fare  ┆ Cabin ┆ Embarked │
-│ ---         ┆ ---    ┆ ---    ┆ ---                    ┆   ┆ ---   ┆ ---   ┆ ---   ┆ ---   │
-│ i64         ┆ i64    ┆ i64    ┆ str                    ┆   ┆ str   ┆ f64   ┆ str   ┆ str   │
-╞═════════════╪════════╪════════╪════════════════════════╪═══╪═══════╪═══════╪═══════╪═══════╡
-│ 1           ┆ 0      ┆ 3      ┆ Braund, Mr. Owen Harris ┆ … ┆ A/5 21171 ┆ 7.25  ┆ null  ┆ S     │
-│ 2           ┆ 1      ┆ 1      ┆ Cumings, Mrs. John Bradley ┆ … ┆ PC 17599 ┆ 71.2833 ┆ C85 ┆ C     │
-│ 3           ┆ 1      ┆ 3      ┆ Heikkinen, Miss. Laina  ┆ … ┆ STON/O2. 3101282 ┆ 7.925 ┆ null ┆ S │
-└─────────────┴────────┴────────┴────────────────────────┴───┴───────┴───────┴───────┴───────┘
-Load time: 0.0312s
+┌────────────┬──────────┬────────┬────────────┬────────┬──────┬───────┬───────┬───────────┬─────────┬───────┬──────────┐
+│ PassengerI ┆ Survived ┆ Pclass ┆ Name       ┆ Sex    ┆ Age  ┆ SibSp ┆ Parch ┆ Ticket    ┆ Fare    ┆ Cabin ┆ Embarked │
+│ d          ┆ ---      ┆ ---    ┆ ---        ┆ ---    ┆ ---  ┆ ---   ┆ ---   ┆ ---       ┆ ---     ┆ ---   ┆ ---      │
+│ ---        ┆ i64      ┆ i64    ┆ str        ┆ str    ┆ f64  ┆ i64   ┆ i64   ┆ str       ┆ f64     ┆ str   ┆ str      │
+│ i64        ┆          ┆        ┆            ┆        ┆      ┆       ┆       ┆           ┆         ┆       ┆          │
+╞════════════╪══════════╪════════╪════════════╪════════╪══════╪═══════╪═══════╪═══════════╪═════════╪═══════╪══════════╡
+│ 1          ┆ 0        ┆ 3      ┆ Braund,    ┆ male   ┆ 22.0 ┆ 1     ┆ 0     ┆ A/5 21171 ┆ 7.25    ┆ null  ┆ S        │
+│            ┆          ┆        ┆ Mr. Owen   ┆        ┆      ┆       ┆       ┆           ┆         ┆       ┆          │
+│            ┆          ┆        ┆ Harris     ┆        ┆      ┆       ┆       ┆           ┆         ┆       ┆          │
+│ 2          ┆ 1        ┆ 1      ┆ Cumings,   ┆ female ┆ 38.0 ┆ 1     ┆ 0     ┆ PC 17599  ┆ 71.2833 ┆ C85   ┆ C        │
+│            ┆          ┆        ┆ Mrs. John  ┆        ┆      ┆       ┆       ┆           ┆         ┆       ┆          │
+│            ┆          ┆        ┆ Bradley    ┆        ┆      ┆       ┆       ┆           ┆         ┆       ┆          │
+│            ┆          ┆        ┆ (Florence  ┆        ┆      ┆       ┆       ┆           ┆         ┆       ┆          │
+│            ┆          ┆        ┆ Briggs     ┆        ┆      ┆       ┆       ┆           ┆         ┆       ┆          │
+│            ┆          ┆        ┆ Thayer…    ┆        ┆      ┆       ┆       ┆           ┆         ┆       ┆          │
+│ 3          ┆ 1        ┆ 3      ┆ Heikkinen, ┆ female ┆ 26.0 ┆ 0     ┆ 0     ┆ STON/O2.  ┆ 7.925   ┆ null  ┆ S        │
+│            ┆          ┆        ┆ Miss.      ┆        ┆      ┆       ┆       ┆ 3101282   ┆         ┆       ┆          │
+│            ┆          ┆        ┆ Laina      ┆        ┆      ┆       ┆       ┆           ┆         ┆       ┆          │
+└────────────┴──────────┴────────┴────────────┴────────┴──────┴───────┴───────┴───────────┴─────────┴───────┴──────────┘
+
 ```
 
 Exploration is intuitive:
@@ -96,6 +107,40 @@ print(df_titanic.dtypes)
 print(df_titanic.describe())
 print(df_titanic.null_count())
 print(df_titanic.tail(3))
+```
+
+
+```python
+Dimension: (891, 12)
+Columns: ['PassengerId', 'Survived', 'Pclass', 'Name', 'Sex', 'Age', 'SibSp', 'Parch', 'Ticket', 'Fare', 'Cabin', 'Embarked']
+[Int64, Int64, Int64, String, String, Float64, Int64, Int64, String, Float64, String, String]
+shape: (9, 13)
+┌─────────┬─────────┬─────────┬─────────┬─────────┬────────┬───┬─────────┬─────────┬─────────┬────────┬───────┬────────┐
+│ statist ┆ Passeng ┆ Survive ┆ Pclass  ┆ Name    ┆ Sex    ┆ … ┆ SibSp   ┆ Parch   ┆ Ticket  ┆ Fare   ┆ Cabin ┆ Embark │
+│ ic      ┆ erId    ┆ d       ┆ ---     ┆ ---     ┆ ---    ┆   ┆ ---     ┆ ---     ┆ ---     ┆ ---    ┆ ---   ┆ ed     │
+│ ---     ┆ ---     ┆ ---     ┆ f64     ┆ str     ┆ str    ┆   ┆ f64     ┆ f64     ┆ str     ┆ f64    ┆ str   ┆ ---    │
+│ str     ┆ f64     ┆ f64     ┆         ┆         ┆        ┆   ┆         ┆         ┆         ┆        ┆       ┆ str    │
+╞═════════╪═════════╪═════════╪═════════╪═════════╪════════╪═══╪═════════╪═════════╪═════════╪════════╪═══════╪════════╡
+│ count   ┆ 891.0   ┆ 891.0   ┆ 891.0   ┆ 891     ┆ 891    ┆ … ┆ 891.0   ┆ 891.0   ┆ 891     ┆ 891.0  ┆ 204   ┆ 889    │
+│ null_co ┆ 0.0     ┆ 0.0     ┆ 0.0     ┆ 0       ┆ 0      ┆ … ┆ 0.0     ┆ 0.0     ┆ 0       ┆ 0.0    ┆ 687   ┆ 2      │
+│ unt     ┆         ┆         ┆         ┆         ┆        ┆   ┆         ┆         ┆         ┆        ┆       ┆        │
+│ mean    ┆ 446.0   ┆ 0.38383 ┆ 2.30864 ┆ null    ┆ null   ┆ … ┆ 0.52300 ┆ 0.38159 ┆ null    ┆ 32.204 ┆ null  ┆ null   │
+│         ┆         ┆ 8       ┆ 2       ┆         ┆        ┆   ┆ 8       ┆ 4       ┆         ┆ 208    ┆       ┆        │
+│ std     ┆ 257.353 ┆ 0.48659 ┆ 0.83607 ┆ null    ┆ null   ┆ … ┆ 1.10274 ┆ 0.80605 ┆ null    ┆ 49.693 ┆ null  ┆ null   │
+│         ┆ 842     ┆ 2       ┆ 1       ┆         ┆        ┆   ┆ 3       ┆ 7       ┆         ┆ 429    ┆       ┆        │
+│ min     ┆ 1.0     ┆ 0.0     ┆ 1.0     ┆ Abbing, ┆ female ┆ … ┆ 0.0     ┆ 0.0     ┆ 110152  ┆ 0.0    ┆ A10   ┆ C      │
+│         ┆         ┆         ┆         ┆ Mr.     ┆        ┆   ┆         ┆         ┆         ┆        ┆       ┆        │
+│         ┆         ┆         ┆         ┆ Anthony ┆        ┆   ┆         ┆         ┆         ┆        ┆       ┆        │
+│ 25%     ┆ 224.0   ┆ 0.0     ┆ 2.0     ┆ null    ┆ null   ┆ … ┆ 0.0     ┆ 0.0     ┆ null    ┆ 7.925  ┆ null  ┆ null   │
+│ 50%     ┆ 446.0   ┆ 0.0     ┆ 3.0     ┆ null    ┆ null   ┆ … ┆ 0.0     ┆ 0.0     ┆ null    ┆ 14.454 ┆ null  ┆ null   │
+│         ┆         ┆         ┆         ┆         ┆        ┆   ┆         ┆         ┆         ┆ 2      ┆       ┆        │
+│ 75%     ┆ 669.0   ┆ 1.0     ┆ 3.0     ┆ null    ┆ null   ┆ … ┆ 1.0     ┆ 0.0     ┆ null    ┆ 31.0   ┆ null  ┆ null   │
+│ max     ┆ 891.0   ┆ 1.0     ┆ 3.0     ┆ van Mel ┆ male   ┆ … ┆ 8.0     ┆ 6.0     ┆ WE/P    ┆ 512.32 ┆ T     ┆ S      │
+...
+│ 891         ┆ 0        ┆ 3      ┆ Dooley,    ┆ male   ┆ 32.0 ┆ 0     ┆ 0     ┆ 370376     ┆ 7.75  ┆ null  ┆ Q        │
+│             ┆          ┆        ┆ Mr.        ┆        ┆      ┆       ┆       ┆            ┆       ┆       ┆          │
+│             ┆          ┆        ┆ Patrick    ┆        ┆      ┆       ┆       ┆            ┆       ┆       ┆          │
+└─────────────┴──────────┴────────┴────────────┴────────┴──────┴───────┴───────┴────────────┴───────┴───────┴──────────┘
 ```
 
 This reveals descriptive statistics, data types, and null values in seconds. Compared to Pandas, Polars is noticeably more efficient even on small loads.
