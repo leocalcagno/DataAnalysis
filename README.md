@@ -26,17 +26,25 @@ This repository features **advanced analytical techniques**, **statistical metho
 
 ## 📚 Repository Structure
 
-*Continuously evolving with new topics and methodologies*
-```
-📁 notebooks/      # Jupyter/Colab notebooks
-📁 scripts/        # Python scripts
-📁 data/           # Sample datasets
-📁 docs/           # Documentation
-```
+### 📁 `notebooks/`
+Jupyter/Colab notebooks for data analysis
 
-- [Python Data Analysis](./Examples/polars.ipynb)
-- [Polars English](./Polars_en.md)
-- [Polars Spanish](./Polars_es.md)
+- [Python Data Analysis](./notebooks/polars.ipynb)
+
+### 📁 `scripts/`
+Python scripts
+
+### 📁 `data/`
+Sample datasets
+
+### 📁 `docs/`
+Project documentation
+
+- [Polars - English Documentation](./docs/polars_en.md)
+- [Polars - Spanish Documentation](./docs/polars_es.md)
+
+
+
 
 ---
 
